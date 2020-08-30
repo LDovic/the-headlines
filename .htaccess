@@ -1,0 +1,26 @@
+Options -MultiViews
+Options -Indexes
+
+RewriteEngine On
+RewriteBase /
+
+#First rewrite any request to the wrong domain to use the correct one (here www.)
+RewriteCond %{HTTP_HOST} !^www\.
+RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI} [R=301]
+
+#Now, rewrite to HTTPS:
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301]
+
+#RewriteRule ^view/login_page.php$ login [R,L]
+RewriteRule ^/?$ view/index.php [NC,L]
+RewriteRule ^index/?$ view/index.php [NC,L]
+RewriteRule ^charts/?$ view/charts.php [NC,L]
+RewriteRule ^about/?$ view/about.php [NC,L]
+RewriteRule ^search/?$ view/search_db.php [NC,L]
+RewriteRule ^login/?$ view/login_page.php [NC,L]
+RewriteRule ^happ/?$ view/app.php [NC,L]
+RewriteRule ^tables/?$ view/tables.php [NC,L]
+RewriteRule ^graphs/?$ view/graphs.php [NC,L]
+RewriteRule ^propaganda/?$ view/propaganda.php [NC,L]
+RewriteRule ^media/?$ view/media [NC,L]
