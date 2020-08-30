@@ -214,6 +214,9 @@ class sql_insert_data extends sql {
 }
 
 class users extends sql {
+	/*
+	* IP logging no longer in use
+	*/
 	public function get_ip($table) {
 		$ip = $_SERVER["REMOTE_ADDR"] ?? '127.0.0.1';
 		$page = json_encode(array($_SERVER["PHP_SELF"] => 1));
