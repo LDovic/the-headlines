@@ -28,14 +28,14 @@ class sql {
 			$write = date("Y-m-d H:i:s") . ": " . " Connection Failed\n";
 		}
 		
-		/*$sql = "SET SESSION time_zone = '+00:00'";
+		$sql = "SET SESSION time_zone = '+00:00'";
 		if (!$conn->query($sql)) {
 			if (STATE == "local") {
       			echo "<TimeZone Not Set> " . $conn->connect_error;
 			}
 			$file = fopen(__DIR__ . "/../../errors/php_error.txt", "a");
 			$write = date("Y-m-d H:i:s") . ": " . " Timezone not set\n";
-		}*/
+		}
 		
 		$this->conn = $conn;
 	}
