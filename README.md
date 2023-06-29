@@ -25,7 +25,6 @@ SOFTWARE.
 End license.
 
 This is a headlines grabbing project. It pulls headlines from the major UK news corporations and organises them according to topic.
-It's live at https://www.theheadlines.org.uk/
 
 It's built in MVC form with the model and controller in the app/ directory.
 
